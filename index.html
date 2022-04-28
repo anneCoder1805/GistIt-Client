@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="styles.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+        <title>GistIt</title>
+        <link rel="icon" href="TitleLogo.png" type="image/png"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    </head>
+    <body>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">
+            <img src="Logo.png" alt="GistIt!" height="60px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-5">
+                <a class="nav-link active" aria-current="page" href="#inputtext">Home</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link active" aria-current="page" href="#abssum">Summarize</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link active" aria-current="page" href="#pointsum">Pointwise Summary</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link active" aria-current="page" href="#numsum">Important Sentences</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link active" aria-current="page" href="#howto">How to Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="gap-custom"></div>
+
+      <div class="container main-body">
+
+        <div class="row gx-5" id="inputtext">
+          <div class="col-md-5 col-sm-12 mb-5 textpane">
+            <div>
+              <h3>Process in text to produce:</h1>
+              <ul>
+                <li>Summary</li>
+                <li>Pointwise Summary</li>
+                <li>Find Important Sentences</li>
+              </ul>
+              <h4>In just ONE click!</h2>
+              <h5>Also, use the slider to go deeper or shallower into your Summary!</h3>
+            </div>
+              <div class="forslider1" id="theta">
+                <div class="slider1">
+                  <label for="threshold" class="form-label"> &#62;&#62; Dive Deeper &#62;&#62;</label>
+                  <input type="range" class="form-range" id="threshold" min="0.20" max="0.90" value="0.45" step="0.01">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-sm-12 mb-5">
+              <div class="container gistit-panes input-group">
+                <textarea placeholder="Type here..." class="form-control" aria-label="Input Text" id="raw-text" name="raw-text"></textarea>
+              </div>
+          </div>
+        </div>
+
+        <div class="row gx-5" id="abssum">
+          <div class="col-md-7 col-sm-12 mb-5">
+            <div class="container gistit-panes input-group">
+              <textarea placeholder="Summary" class="form-control" aria-label="Abstract Summary" id="abs-sum" name="abs-sum"></textarea>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12 mb-5 textpane">
+            Use the "Get Summary" button to get an adjective summary.
+            <br>
+            Also, don't forget to use the slider to specify the depth of summary you want!
+            <br>
+            <br>
+            <br>
+            <br> 
+            <div class="pushtocenter">
+              <button id="getsummary" class="gistbuttons">Get Summary</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gx-5" id="pointsum">
+          <div class="col-md-5 col-sm-12 mb-5 textpane">
+            Use the "Get Points" button to get pointwise summary from the text entered.
+            <br>
+            You can increase or decrease the number of points by using the slider again to change the depth of summary. 
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="pushtocenter">
+              <button id="getpoints" class="gistbuttons">Get Points</button>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 mb-5">
+            <div class="container gistit-panes input-group">
+              <textarea placeholder="Points" class="form-control" aria-label="Pointwise Summary" id="pnt-text" name="pnt-text"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gx-5" id="numsum">
+          <div class="col-md-7 col-sm-12 mb-5">
+            <div class="container gistit-panes input-group">
+              <textarea placeholder="Important Sentences" class="form-control" aria-label="Top N SEntences" id="num-text" name="num-text"></textarea>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12 mb-5 textpane">
+            Retain 'n' most important from each subtopic.
+            <br>
+            Enter the the number of sentences you want from each subtopic and click on the "Get Important Sentences" button.
+            <br>
+            Again, you can decide if you want more details, then to use the slider.
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">Enter the Value of 'n':</span>
+              <input type="number" class="form-control" placeholder="1" aria-label="nsent" aria-describedby="basic-addon1" id="nsent" min="1">
+            </div>
+            <div class="pushtocenter">
+              <button id="getsents" class="gistbuttons">Get Important Sentences</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gx-5" id="howto">
+          <div class="col-md-12 col-sm-12 mb-5 textpane">
+            <h3>How to Use GistIt!</h3>
+            Enter the the text tou want to summarize in the first or topmost pane.
+            <br>
+            To get the topicwise summary, you can scroll a bit down, near the second pane, to click the "Get Summary" button. The summary will be shown the second pane.
+            <br>
+            To get the pointwise summary, scroll a bit further and click the "Get Points" button. The points will be displayed in the third pane.
+            <br>
+            To get the most 'n' important sentences, type the number in the textfield near the last pane and click on "Get Importanat Sentences" button. The sentences will be displayed in the last pane.
+            <br>
+            Important Note: For each of above three functionalities, you can use the slider and click on the respective buttons again to increase or decrease the depth of the summary.
+          </div>
+        </div>
+      </div>
+
+
+      <footer class="gistitfooter">
+        <div class="text-center p-4">
+          © 2022 Copyright: Anwesha and Kritika
+        </div>
+      </footer>
+        
+
+
+
+
+
+
+
+
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+    
+    </body>
+</html>

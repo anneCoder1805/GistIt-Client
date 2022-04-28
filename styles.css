@@ -1,0 +1,155 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow:visible;
+    background: fixed;
+    background-image: url('BG.png');
+    background-size: cover;
+}
+
+.gap-custom{
+    height: 40px;
+}
+
+.navbar{
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));    
+}
+.nav-link:focus{
+    color: white !important;
+    text-shadow: 0 0 20px rgb(255, 165, 0);
+    /* font-size: 1.2rem; */
+}
+
+.nav-link:hover{
+    color: white !important;
+    text-shadow: 0 0 20px rgb(255, 165, 0);
+    /* font-size: 1.2rem; */
+}
+
+.main-body{
+    margin-top: 5em;
+}
+
+.gistit-panes{
+    
+    padding: 0em;
+    font-size: 12px;
+    word-spacing: 1em;
+    text-align: justify;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 2em black;
+
+}
+
+textarea{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+::-webkit-scrollbar {
+     /* Width of vertical scroll bar */
+    width: 10px;
+    /* Height of horizontal scroll bar */
+    height:5px;
+    background-color: rgba(0,0,0,0);
+
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 165, 0, 1);
+    background: rgba(255, 165, 0, 0.5);
+}
+
+::-webkit-scrollbar-corner{
+    display: none;
+}
+
+.gistitfooter{
+    background: black;
+    color: white;
+}
+.form-control{
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.forslider1{
+    width: 20%;
+    padding: 1em;
+    background-color: rgba(255, 165, 0, 0.9);
+    /* border: 2px solid black; */
+    border-radius: 50px;
+    position: fixed;
+    left: 5%;
+    bottom: 25%;
+    z-index: 9999;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.slider1
+{
+    position: relative;
+    z-index: 22;
+    width: 100%;
+}
+input[type=range] {
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: rgba(49, 34, 6, 0.783);
+}
+
+.textpane{
+    /* position: absolute; */
+    text-align: justify;
+    align-items: center;
+    align-content: center;
+    color: white;
+    border: 0px 0px solid rgba(0,0,0,0);
+    border-radius: 0.5rem;
+    text-shadow: 0px 0px 5px black;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+
+.gistbuttons {
+    /* position: relative; */
+    bottom: 0;
+    border: 1px solid rgb(255, 165, 0);
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    background-color: rgba(255, 165, 0, 0.9);
+    color: white;
+}
+
+.pushtocenter{
+    text-align: center;
+}
+  /* Small Media */
+@media (max-width: 600px) {
+    .gistit-panes{
+        height: 80px;
+    }
+
+}
+
+@media (min-width: 601px) {
+    .gistit-panes{
+        height: 320px;
+    }
+}
